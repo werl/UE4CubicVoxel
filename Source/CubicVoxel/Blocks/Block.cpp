@@ -5,9 +5,6 @@ ABlock::ABlock()
 {
     // Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = CanTick();
-
-	blockMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Block Mesh"));
-	SetRootComponent(blockMesh);
 }
 
 // Called when the game starts or when spawned
@@ -21,4 +18,5 @@ void ABlock::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }
+
 

@@ -20,14 +20,4 @@ protected:
 public:
     // Called every frame
     virtual void Tick(float DeltaTime) override;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UStaticMeshComponent* blockMesh;
-
-    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-    bool BreakBlock();
-
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-	bool CanTick();
-
 };

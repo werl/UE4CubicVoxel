@@ -12,20 +12,31 @@ class CUBICVOXEL_API AWorldLoaderBase : public AActor
 	
 public:
 
-	UPROPERTY(EditAnywhere)
-	ABlock* breakable;
-	UPROPERTY(EditAnywhere)
-	ABlock* unbreakable;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int numBlocks = 2;
 
 	UPROPERTY(EditAnywhere)
-	int xSize = 10;
+	UMaterial* mat1;
+
 	UPROPERTY(EditAnywhere)
-	int ySize = 10;
+	UMaterial* mat2;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		//TArray<UInstancedStaticMeshComponent*> meshes;
+	UInstancedStaticMeshComponent* mesh1;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UInstancedStaticMeshComponent* mesh2;
+
+
 	UPROPERTY(EditAnywhere)
-	int zSize = 1;
+	int xSize = 5;
+	UPROPERTY(EditAnywhere)
+	int ySize = 5;
+	UPROPERTY(EditAnywhere)
+	int zSize = 5;
 
 	UPROPERTY(VisibleAnywhere)
-	TArray<ABlock*> blocks;
+	TArray<int> blocks = TArray<int>();
 
 	// Sets default values for this actor's properties
 	AWorldLoaderBase();
