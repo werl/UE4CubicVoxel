@@ -2,31 +2,30 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "../Blocks/Block.h"
+#include "../Blocks/BlockComponent.h"
+#include "Components/InstancedStaticMeshComponent.h"
 #include "WorldLoaderBase.generated.h"
 
 UCLASS()
 class CUBICVOXEL_API AWorldLoaderBase : public AActor
 {
 	GENERATED_BODY()
-	
+
 public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int numBlocks = 2;
-
-	UPROPERTY(EditAnywhere)
-	UMaterial* mat1;
-
-	UPROPERTY(EditAnywhere)
-	UMaterial* mat2;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		//TArray<UInstancedStaticMeshComponent*> meshes;
 	UInstancedStaticMeshComponent* mesh1;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UInstancedStaticMeshComponent* mesh2;
-
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UBlockComponent* block1;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UBlockComponent* block2;
 
 	UPROPERTY(EditAnywhere)
 	int xSize = 5;
