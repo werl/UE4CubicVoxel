@@ -4,6 +4,7 @@
 #include "GameFramework/Actor.h"
 #include "../Blocks/BlockComponent.h"
 #include "Components/InstancedStaticMeshComponent.h"
+#include "Components/BoxComponent.h"
 #include "WorldLoaderBase.generated.h"
 
 UCLASS()
@@ -15,6 +16,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int numBlocks = 2;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UBoxComponent* chuckBounds;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		//TArray<UInstancedStaticMeshComponent*> meshes;

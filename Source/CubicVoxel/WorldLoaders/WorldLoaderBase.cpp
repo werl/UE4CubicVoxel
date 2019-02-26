@@ -1,6 +1,7 @@
 #include "WorldLoaderBase.h"
 #include "Math/UnrealMathUtility.h"
 #include "../Helpers/WorldHelpers.h"
+#include "Engine/TriggerBox.h"
 #include "Engine/World.h"
 
 // Sets default values
@@ -8,6 +9,10 @@ AWorldLoaderBase::AWorldLoaderBase()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+//	chuckBounds = CreateDefaultSubobject<UBoxComponent>(TEXT("Bounds"));
+//	chuckBounds->bHiddenInGame = true;
+//	RootComponent = chuckBounds;
 
 	mesh1 = CreateDefaultSubobject<UInstancedStaticMeshComponent>(TEXT("Mesh1"));
 	mesh2 = CreateDefaultSubobject<UInstancedStaticMeshComponent>(TEXT("Mesh2"));
@@ -18,6 +23,8 @@ AWorldLoaderBase::AWorldLoaderBase()
 void AWorldLoaderBase::BeginPlay()
 {
 	Super::BeginPlay();
+
+//	GetWorld()->SpawnActor(ATriggerBox::StaticClass());
 	
 	blocks.SetNum(xSize * ySize * zSize);
 
